@@ -327,6 +327,13 @@ async def admin_login_api(request: Request, body: AdminLoginBody | None = Body(d
     - 兼容旧版本：允许 Authorization: Bearer <password> 仅密码登录（用户名默认为 admin）
     """
 
+
+        # 临时硬编码测试
+    admin_username = "admin"
+    admin_password = "123456"
+    # ==============
+
+    
     admin_username = str(get_config("app.admin_username", "admin") or "admin").strip() or "admin"
     admin_password = str(get_config("app.app_key", "admin") or "admin").strip()
 
